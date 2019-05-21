@@ -5,32 +5,42 @@ nav ul {
 }
 nav ul a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 .Header {
-  background-color: #3c40c6;
+  background-color: var(--primary);
   padding: 1rem;
   font-size: 1.2rem;
+  color: var(--white);
 }
 .Header-container {
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .Header-brand {
-  color: #fff;
   text-decoration: none;
   font-size: 1.4rem;
+  color: var(--white);
 }
 .Header-list {
   white-space: nowrap;
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-evenly;
+}
+.Header-list a:hover {
+  color: #13f75f;
 }
 @media screen and (min-width: 768px) {
   .Header-list {
     display: flex;
     justify-content: space-between;
     flex-basis: 25%;
-    align-items: center;
+  }
+  .Header-container .toggle {
+    display: none;
   }
 }

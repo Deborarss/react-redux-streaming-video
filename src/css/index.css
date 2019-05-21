@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
+:root {
+  --white: #fff;
+  --primary: #3c40c6;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',

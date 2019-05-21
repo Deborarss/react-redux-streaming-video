@@ -10,7 +10,6 @@ const Header = () => {
         <Link to="/" className="Header-brand">
           Streamy
         </Link>
-
         <ul className="Header-list">
           <li>
             <Link to="/">Todas Streams</Link>

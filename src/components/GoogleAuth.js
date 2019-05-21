@@ -14,22 +14,35 @@ class GoogleAuth extends Component {
         .then(() => {
           this.auth = window.gapi.auth2.getAuthInstance();
           this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
   }
 
+  onAuthChange = () => {
+    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  };
+
+  onSignInClick = () => {
+    this.auth.signIn();
+  };
+
+  onSignOutClick = () => {
+    this.auth.signOut();
+  };
+
   renderAuthButton() {
     if (this.state.isSignedIn === null) {
-      return <div>Eu não sei se estamos registrados</div>;
+      return null;
     } else if (this.state.isSignedIn) {
-      return <div>Eu estou registrada!</div>;
+      return <li onClick={this.onSignOutClick}>Sair</li>;
     } else {
-      return <div>Eu não estou registrada!</div>;
+      return <li onClick={this.onSignInClick}>Logar</li>;
     }
   }
 
   render() {
-    return <li>{this.renderAuthButton()}</li>;
+    return <React.Fragment>{this.renderAuthButton()}</React.Fragment>;
   }
 }
 
