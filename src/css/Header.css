@@ -6,17 +6,31 @@ nav ul {
 nav ul a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.4rem;
 }
 .Header {
   background-color: #3c40c6;
+  padding: 1rem;
+  font-size: 1.2rem;
 }
 .Header-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.Header-brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
 }
 .Header-list {
-  display: flex;
-  padding: 1.2rem;
-  justify-content: space-between;
+  white-space: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .Header-list {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 25%;
+    align-items: center;
+  }
 }
